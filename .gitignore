@@ -1,0 +1,5 @@
+*.rpm
+/.vagrant
+/genconf
+/node_files
+/server_files
