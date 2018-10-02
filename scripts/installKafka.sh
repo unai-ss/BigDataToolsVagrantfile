@@ -74,9 +74,19 @@ sudo systemctl enable kafka
 echo 'INSTALLER KAFKAT'
 sudo yum install ruby ruby-devel make gcc patch -y
 sudo gem install kafkat
+sudo cat <<EOF >/home/vagrant/.kafkatcfg
+{
+  "kafka_path": "~/kafka",
+  "log_path": "/tmp/kafka-logs",
+  "zk_path": "localhost:2181"
+}
+EOF
 
 echo 'test kafka'
-/home/vagrant/kafka/bin/kafka-topics.sh --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic TutorialTopic
+/home/vagrant/kafka/bin/kafka-topics.sh --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic TopicFenix
+/home/vagrant/kafka/bin/kafka-topics.sh --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic TopicSigme
+/home/vagrant/kafka/bin/kafka-topics.sh --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic TopicGeo
 #echo "Hello, World" | /home/vagrant/kafka/bin/kafka-console-producer.sh --broker-list localhost:9092 --topic TutorialTopic > /dev/null
 #/home/vagrant/kafka/bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic TutorialTopic --from-beginning
+sudo /usr/local/bin/kafkat partitions
 echo 'fin de pruebas de kafka'
