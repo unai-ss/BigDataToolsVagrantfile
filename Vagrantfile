@@ -25,7 +25,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     app.vm.box_url = "\n"
     app.vm.provider :virtualbox do |v|
       v.customize ["modifyvm", :id, "--natdnshostresolver1", "on"]
-      v.customize ["modifyvm", :id, "--memory", 512]
+      v.customize ["modifyvm", :id, "--memory", 256]
       v.customize ["modifyvm", :id, "--name", "Spark"]
       v.customize ["modifyvm", :id, "--usb", "on"]
       v.customize ["modifyvm", :id, "--usbehci", "off"]
@@ -72,7 +72,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     hbs.vm.box_url = "\n"
     hbs.vm.provider :virtualbox do |v|
       v.customize ["modifyvm", :id, "--natdnshostresolver1", "on"]
-      v.customize ["modifyvm", :id, "--memory", 512]
+      v.customize ["modifyvm", :id, "--memory", 256]
       v.customize ["modifyvm", :id, "--name", "HBase"]
       v.customize ["modifyvm", :id, "--usb", "on"]
       v.customize ["modifyvm", :id, "--usbehci", "off"]
@@ -119,7 +119,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     kfk.vm.box_url = "\n"
     kfk.vm.provider :virtualbox do |v|
       v.customize ["modifyvm", :id, "--natdnshostresolver1", "on"]
-      v.customize ["modifyvm", :id, "--memory", 512]
+      v.customize ["modifyvm", :id, "--memory", 256]
       v.customize ["modifyvm", :id, "--name", "Kafka"]
       v.customize ["modifyvm", :id, "--usb", "on"]
       v.customize ["modifyvm", :id, "--usbehci", "off"]

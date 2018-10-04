@@ -25,7 +25,7 @@ sudo tar -C /opt -xvzf /opt/spark-2.2.2-bin-hadoop2.7.tgz
 sudo ln -s /opt/spark-2.2.2-bin-hadoop2.7  /opt/spark
 sudo mkdir -p /usr/local/spark
 sudo cp -r /opt/spark-2.2.2-bin-hadoop2.7/* /usr/local/spark
-sudo PATH=$PATH:$HOME/bin:/opt/spark/bin
-sudo export SPARK_EXAMPLES_JAR=/opt/spark/examples/jars/spark-examples_2.11-2.2.2.jar
+export PATH=$PATH:$HOME/bin:/opt/spark/bin
+export SPARK_EXAMPLES_JAR=/opt/spark/examples/jars/spark-examples_2.11-2.2.2.jar
 sudo sh -c "echo SPARK_EXAMPLES_JAR=/opt/spark/examples/jars/spark-examples_2.11-2.2.2.jar >> /etc/environment"
 sudo sh -c "echo PATH=$PATH:$HOME/bin:/opt/spark/bin >> /etc/environment"
