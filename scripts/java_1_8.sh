@@ -6,9 +6,9 @@ sudo wget --no-cookies --no-check-certificate --header "Cookie: gpw_e24=http%3A%
 echo 'Instalar Java 8 JRE y JDK'
 sudo yum localinstall jdk-8u181-linux-x64.rpm -y
 sudo yum localinstall jre-8u181-linux-x64.rpm -y
-sudo export JAVA_HOME=/opt/jdk1.8.0_181
-sudo export JRE_HOME=/opt/jdk1.8.0_181/jre
-sudo export PATH=$PATH:/opt/jdk1.8.0_181/bin:/opt/jdk1.8.0_181/jre/bin
+export JAVA_HOME=/usr/java/jdk1.8.0_181-amd64
+export JRE_HOME=/usr/java/jdk1.8.0_181-amd64/jre
+export PATH=$PATH:/usr/java/jdk1.8.0_181-amd64/bin:/opt/jdk1.8.0_181-amd64/jre/bin
 sudo sh -c "echo JAVA_HOME=/usr/java/jdk1.8.0_181-amd64 >> /etc/environment"
 sudo sh -c "echo JRE_HOME=/usr/java/jdk1.8.0_181-amd64/jre >> /etc/environment"
 sudo sh -c "echo PATH=$PATH:/usr/java/jdk1.8.0_181-amd64/bin:/opt/jdk1.8.0_181-amd64/jre/bin >> /etc/environment"
