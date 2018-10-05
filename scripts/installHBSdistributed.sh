@@ -1,15 +1,16 @@
 # hbase 1.2 standalone
-sudo yum groupinstall 'Development Tools'
-sudo yum install gcc gcc-c++ make
+sudo yum install gcc gcc-c++ make ssh rsync lsof vim -y
 sudo wget http://apache.rediris.es/hbase/1.2.7/hbase-1.2.7-bin.tar.gz
+sudo wget http://apache.rediris.es/hadoop/common/stable/hadoop-2.9.1.tar.gz
 sudo tar -C /home/vagrant/ -zxvf hbase-1.2.7-bin.tar.gz
+sudo tar -C /home/vagrant/ -zxvf hadoop-2.9.1.tar.gz
 sudo sed -i 's/# export JAVA_HOME=\/usr\/java\/jdk1.6.0\//export JAVA_HOME=\/usr\/java\/jdk1.8.0_181-amd64\//g' /home/vagrant/hbase-1.2.7/conf/hbase-env.sh
 sudo sed -i '/configuration>$/d' /home/vagrant/hbase-1.2.7/conf/hbase-site.xml
 sudo cat <<EOF >>/home/vagrant/hbase-1.2.7/conf/hbase-site.xml
 <configuration>
   <property>
     <name>hbase.rootdir</name>
-    <value>file:///home/vagrant/hbase</value>
+    <value>hdfs://localhost:8020/hbase</value>
   </property>
   <property>
     <name>hbase.zookeeper.property.dataDir</name>
@@ -30,6 +31,10 @@ sudo cat <<EOF >>/home/vagrant/hbase-1.2.7/conf/hbase-site.xml
       likely not a false positive.
     </description>
   </property>
+  <property>
+  <name>hbase.cluster.distributed</name>
+  <value>true</value>
+</property>
 </configuration>
 EOF
 export HBASE_LOG_DIR=/var/log/hbase
