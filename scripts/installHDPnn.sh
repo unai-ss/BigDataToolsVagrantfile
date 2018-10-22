@@ -39,11 +39,11 @@ cat <<EOF >>$HADOOP_CONF_DIR/hdfs-site.xml
 <configuration>
   <property>
     <name>dfs.namenode.name.dir</name>
-    <value>/home/hadoop/data/nameNode</value>
+    <value>/home/vagrant/hadoop/data/nameNode</value>
   </property>
   <property>
     <name>dfs.datanode.data.dir</name>
-    <value>/home/hadoop/data/dataNode</value>
+    <value>/home/vagrant/hadoop/data/dataNode</value>
   </property>
 	<property>
 		<name>dfs.replication</name>
@@ -127,6 +127,11 @@ EOF
 mkdir -p $HADOOP_HOME/data/nameNode
 mkdir -p $HADOOP_HOME/data/dataNode
 mkdir -p $HADOOP_HOME/hdata
+
+cat <<EOF >>/home/vagrant/.ssh/authorized_keys
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDtTLp9ScSKB+gffdG7T4Zf99KSBF9zY88chXE6mzjBvVMRLBtvhFzgr/h49eA/J6yrB57ABPABPcXgoQ6IF7SSFCIX/LSrNdDW8SVB/4CJSHyv1nnjEXIiDPkUtP10SMBupmr44xeH8qJ0zp3Rmp7m83SX3TZnSY1lLJg28lQeUNMzR06o+rEFVeywaKfGUg4ZntcyZP29JQz7AoAb5IB/8A32jLKh1g+JanrvoJALYMrcChc7w/HYLCCBsxig8DH15MBCHcZxN9tQNOLxveIQF3u2Ole0QTK4RKHbCNO6w/e1tL9LhJjT6wGxoKv6s1XWH2I7JeG+D4rzu9Ia6d8Z vagrant@hdpnn
+EOF
+sudo touch /home/vagrant/hadoop-2.9.1/logs/hadoop-vagrant-datanode-hdpnn.out
 #mkdir -p $HADOOP_HOME/hadoop_store/hdfs/namenode2
 sudo chown -R vagrant:vagrant $HADOOP_HOME
 #chmod 755 $HADOOP_HOME/hadoop_store/hdfs/namenode2

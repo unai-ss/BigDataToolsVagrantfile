@@ -195,7 +195,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     end
 
     # VM hostname
-    nn.vm.hostname = "HDPnn"
+    nn.vm.hostname = "hdpnn"
 
     # Oracle port forwarding
     # config.vm.network "forwarded_port", guest: 22, host: 2220
@@ -205,6 +205,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     #nn.vm.provision "file", source: "./scripts/zookeeper.service", destination: "/tmp"
     nn.vm.provision "shell", path: "scripts/java_1_8.sh"
     nn.vm.provision "shell", path: "scripts/installHDPnn.sh"
+    nn.vm.provision "shell", path: "scripts/installHBSdistributed.sh"
+    nn.vm.provision "shell", path: "scripts/zookeeper.sh"
     # nn.vm.provision :reload
     nn.vm.provision "shell", inline: "echo 'INSTALLER HDPnn: Installation complete, Oracle Linux 7 ready to use!'"
   end
@@ -245,7 +247,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     end
 
     # VM hostname
-    dn1.vm.hostname = "HDPdn1"
+    dn1.vm.hostname = "hdpdn1"
 
     # Oracle port forwarding
     # config.vm.network "forwarded_port", guest: 22, host: 2220
@@ -255,6 +257,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     #dn1.vm.provision "file", source: "./scripts/zookeeper.service", destination: "/tmp"
     dn1.vm.provision "shell", path: "scripts/java_1_8.sh"
     dn1.vm.provision "shell", path: "scripts/installHDPdn1.sh"
+    dn1.vm.provision "shell", path: "scripts/installHBSdistributed.sh"
+    dn1.vm.provision "shell", path: "scripts/zookeeper.sh"
     # dn1.vm.provision :reload
     dn1.vm.provision "shell", inline: "echo 'INSTALLER HDPdn1: Installation complete, Oracle Linux 7 ready to use!'"
   end
@@ -295,7 +299,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     end
 
     # VM hostname
-    dn2.vm.hostname = "HDPdn2"
+    dn2.vm.hostname = "hdpdn2"
 
     # Oracle port forwarding
     # config.vm.network "forwarded_port", guest: 22, host: 2220
@@ -305,9 +309,107 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     #dn2.vm.provision "file", source: "./scripts/zookeeper.service", destination: "/tmp"
     dn2.vm.provision "shell", path: "scripts/java_1_8.sh"
     dn2.vm.provision "shell", path: "scripts/installHDPdn2.sh"
+    dn2.vm.provision "shell", path: "scripts/installHBSdistributed.sh"
+    dn2.vm.provision "shell", path: "scripts/zookeeper.sh"
     # dn2.vm.provision :reload
     dn2.vm.provision "shell", inline: "echo 'INSTALLER HDPdn2: Installation complete, Oracle Linux 7 ready to use!'"
   end
+  config.vm.define "keycloack" do |keycloack|
+    keycloack.vm.box = "CentosBox/Centos-7-v7.4-Minimal-CLI"
+    keycloack.vm.box_version = "17.11.24"
+    keycloack.vm.define "HDPkeycloack"
+    keycloack.vm.network "public_network", bridge: "en0: Wi-Fi (AirPort)", ip: "192.168.1.212"
+    keycloack.vm.network "private_network", ip: "172.16.1.7"
+  #    keycloack.vm.synced_folder "./",  "/tmp/sync"
+    keycloack.vm.box_url = "\n"
+    keycloack.vm.provider :virtualbox do |v|
+      v.customize ["modifyvm", :id, "--natdnshostresolver1", "on"]
+      v.customize ["modifyvm", :id, "--memory", 256]
+      v.customize ["modifyvm", :id, "--name", "HDPkeycloack"]
+      v.customize ["modifyvm", :id, "--usb", "on"]
+      v.customize ["modifyvm", :id, "--usbehci", "off"]
+      v.customize ["modifyvm", :id, "--macaddress1", "auto"]
+    end
 
+    keycloack.vm.box_check_update = false
 
+    # add proxy configuration from host env - optional
+    if Vagrant.has_plugin?("vagrant-proxyconf")
+      puts "getting Proxy Configuration from Host..."
+      if ENV["http_proxy"]
+        puts "http_proxy: " + ENV["http_proxy"]
+        keycloack.proxy.http     = ENV["http_proxy"]
+      end
+      if ENV["https_proxy"]
+        puts "https_proxy: " + ENV["https_proxy"]
+        keycloack.proxy.https    = ENV["https_proxy"]
+      end
+      if ENV["no_proxy"]
+        keycloack.proxy.no_proxy = ENV["no_proxy"]
+      end
+    end
+
+    # VM hostname
+    keycloack.vm.hostname = "hdpkeycloack"
+
+    # Oracle port forwarding
+    # config.vm.network "forwarded_port", guest: 22, host: 2220
+
+    # Provision everything on the first run
+    #keycloack.vm.provision "file", source: "~/github/BigDataOracleSparkHBase/jre-8u181-linux-x64.rpm", destination: "/tmp"
+    #keycloack.vm.provision "file", source: "./scripts/zookeeper.service", destination: "/tmp"
+    keycloack.vm.provision "shell", path: "scripts/java_1_8.sh"
+    keycloack.vm.provision "shell", path: "scripts/installHDPKeycloack.sh"
+    # keycloack.vm.provision :reload
+    keycloack.vm.provision "shell", inline: "echo 'INSTALLER freeipa: Installation complete, Oracle Linux 7 ready to use!'"
+  end
+  config.vm.define "freeipa" do |freeipa|
+    freeipa.vm.box = "CentosBox/Centos-7-v7.4-Minimal-CLI"
+    freeipa.vm.box_version = "17.11.24"
+    freeipa.vm.define "freeipa"
+    freeipa.vm.network "public_network", bridge: "en0: Wi-Fi (AirPort)", ip: "192.168.1.213"
+    freeipa.vm.network "private_network", ip: "172.16.1.8"
+  #    freeipa.vm.synced_folder "./",  "/tmp/sync"
+    freeipa.vm.box_url = "\n"
+    freeipa.vm.provider :virtualbox do |v|
+      v.customize ["modifyvm", :id, "--natdnshostresolver1", "on"]
+      v.customize ["modifyvm", :id, "--memory", 256]
+      v.customize ["modifyvm", :id, "--name", "freeipa"]
+      v.customize ["modifyvm", :id, "--usb", "on"]
+      v.customize ["modifyvm", :id, "--usbehci", "off"]
+      v.customize ["modifyvm", :id, "--macaddress1", "auto"]
+    end
+
+    freeipa.vm.box_check_update = false
+
+    # add proxy configuration from host env - optional
+    if Vagrant.has_plugin?("vagrant-proxyconf")
+      puts "getting Proxy Configuration from Host..."
+      if ENV["http_proxy"]
+        puts "http_proxy: " + ENV["http_proxy"]
+        freeipa.proxy.http     = ENV["http_proxy"]
+      end
+      if ENV["https_proxy"]
+        puts "https_proxy: " + ENV["https_proxy"]
+        freeipa.proxy.https    = ENV["https_proxy"]
+      end
+      if ENV["no_proxy"]
+        freeipa.proxy.no_proxy = ENV["no_proxy"]
+      end
+    end
+
+    # VM hostname
+    freeipa.vm.hostname = "freeipa"
+
+    # Oracle port forwarding
+    # config.vm.network "forwarded_port", guest: 22, host: 2220
+
+    # Provision everything on the first run
+    #freeipa.vm.provision "file", source: "~/github/BigDataOracleSparkHBase/jre-8u181-linux-x64.rpm", destination: "/tmp"
+    #freeipa.vm.provision "file", source: "./scripts/zookeeper.service", destination: "/tmp"
+#    freeipa.vm.provision "shell", path: "scripts/java_1_8.sh"
+    freeipa.vm.provision "shell", path: "scripts/installHDPfreeipa.sh"
+    # freeipa.vm.provision :reload
+    freeipa.vm.provision "shell", inline: "echo 'INSTALLER freeipa: Installation complete, Oracle Linux 7 ready to use!'"
+  end
 end
