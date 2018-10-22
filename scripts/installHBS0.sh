@@ -3,7 +3,7 @@ sudo yum groupinstall 'Development Tools'
 sudo yum install gcc gcc-c++ make
 sudo wget http://apache.rediris.es/hbase/1.2.7/hbase-1.2.7-bin.tar.gz
 sudo tar -C /home/vagrant/ -zxvf hbase-1.2.7-bin.tar.gz
-sudo sed -i 's/# export JAVA_HOME=\/usr\/java\/jdk1.6.0\//export JAVA_HOME=\/usr\/java\/jdk1.8.0_191-amd64\//g' /home/vagrant/hbase-1.2.7/conf/hbase-env.sh
+sudo sed -i 's/# export JAVA_HOME=\/usr\/java\/jdk1.6.0\//export JAVA_HOME=\/usr\/java\/jdk1.8.0_181-amd64\//g' /home/vagrant/hbase-1.2.7/conf/hbase-env.sh
 sudo sed -i '/configuration>$/d' /home/vagrant/hbase-1.2.7/conf/hbase-site.xml
 sudo cat <<EOF >>/home/vagrant/hbase-1.2.7/conf/hbase-site.xml
 <configuration>
