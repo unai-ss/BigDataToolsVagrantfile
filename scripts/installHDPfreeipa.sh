@@ -9,7 +9,7 @@ address=/masterlb.external.acc/172.16.1.2
 address=/agent.external.acc/172.16.1.3
 address=/bootstrap.external.acc/172.16.1.1
 address=/ansible.external.acc/172.16.1.4
-address=/freeipa.external.acc/10.0.2.15
+address=/freeipa.external.acc/10.0.2.15s
 ptr-record=2.1.16.172.in-addr.arpa,masterlb.external.acc
 ptr-record=4.1.16.172.in-addr.arpa,ansible.external.acc
 ptr-record=3.1.16.172.in-addr.arpa,agent.external.acc
@@ -32,7 +32,7 @@ sudo yum install rng-tools -y
 sudo systemctl start rngd
 sudo systemctl enable rngd
 sudo systemctl status rngd
-sudo yum install ipa-server -y
+sudo yum install ipa-server ipa-server-dns -y
 sudo chown 0777 /var/log/ipaserver-install.log
 #sudo ipa-server-install -p Passwd123 -a Passwd123 -n EXAMPLE.COM -r EXAMPLE.COM
 sudo ipa-server-install

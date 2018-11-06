@@ -1,0 +1,5 @@
+#dns a y ptr activados
+#hostname activado
+#nada en etc/hosts del fqdn
+# ntp activo y enabled como cliente
+yum install openldap-clients krb5-workstation krb5-libs -y
