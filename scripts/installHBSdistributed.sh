@@ -1,10 +1,10 @@
 # hbase 1.2 standalone
 sudo yum install gcc gcc-c++ make ssh rsync lsof vim -y
-sudo wget http://apache.rediris.es/hbase/1.2.7/hbase-1.2.7-bin.tar.gz
-sudo tar -C /home/vagrant/ -zxvf hbase-1.2.7-bin.tar.gz
-sudo sed -i '/configuration>$/d' /home/vagrant/hbase-1.2.7/conf/hbase-site.xml
-sudo chown -R vagrant:vagrant /home/vagrant/hbase-1.2.7
-sudo cat <<EOF >>/home/vagrant/hbase-1.2.7/conf/hbase-site.xml
+sudo wget http://apache.rediris.es/hbase/2.1.1/hbase-2.1.1-bin.tar.gz
+sudo tar -C /home/vagrant/ -zxvf hbase-2.1.1-bin.tar.gz
+sudo sed -i '/configuration>$/d' /home/vagrant/hbase-2.1.1/conf/hbase-site.xml
+sudo chown -R vagrant:vagrant /home/vagrant/hbase-2.1.1
+sudo cat <<EOF >>/home/vagrant/hbase-2.1.1/conf/hbase-site.xml
 <configuration>
 <property>
   <name>hbase.rootdir</name>

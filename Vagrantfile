@@ -459,9 +459,9 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     #hbaseDistr.vm.provision "file", source: "./scripts/zookeeper.service", destination: "/tmp"
     hbaseDistr.vm.provision "shell", path: "scripts/java_1_8.sh"
     hbaseDistr.vm.provision "shell", path: "scripts/instalHadoopStandalone.sh"
-    hbaseDistr.vm.provision "shell", path: "scripts/installHBSdistributed.sh"
-    hbaseDistr.vm.provision "shell", path: "scripts/zookeeperstandalone.sh"
-    hbaseDistr.vm.provision "shell", path: "scripts/geomesa.sh"
+    #hbaseDistr.vm.provision "shell", path: "scripts/installHBSdistributed.sh"
+    #hbaseDistr.vm.provision "shell", path: "scripts/zookeeperstandalone.sh"
+    #hbaseDistr.vm.provision "shell", path: "scripts/geomesa.sh"
     hbaseDistr.vm.provision "shell", inline: "echo 'INSTALLER hbaseDistr: Installation complete, Oracle Linux 7 ready to use!'"
   end
 end
