@@ -459,9 +459,60 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     #hbaseDistr.vm.provision "file", source: "./scripts/zookeeper.service", destination: "/tmp"
     hbaseDistr.vm.provision "shell", path: "scripts/java_1_8.sh"
     hbaseDistr.vm.provision "shell", path: "scripts/instalHadoopStandalone.sh"
-    #hbaseDistr.vm.provision "shell", path: "scripts/installHBSdistributed.sh"
+    hbaseDistr.vm.provision "shell", path: "scripts/installHBSdistributed.sh"
     #hbaseDistr.vm.provision "shell", path: "scripts/zookeeperstandalone.sh"
     #hbaseDistr.vm.provision "shell", path: "scripts/geomesa.sh"
     hbaseDistr.vm.provision "shell", inline: "echo 'INSTALLER hbaseDistr: Installation complete, Oracle Linux 7 ready to use!'"
+  end
+  config.vm.define "hbaseDistr2" do |hbaseDistr2|
+    hbaseDistr2.vm.box = "CentosBox/Centos-7-v7.4-Minimal-CLI"
+    hbaseDistr2.vm.box_version = "17.11.24"
+    hbaseDistr2.vm.define "hbaseDistr2"
+    hbaseDistr2.vm.network "public_network", bridge: "en0: Wi-Fi (AirPort)", ip: "192.168.1.214"
+    hbaseDistr2.vm.network "private_network", ip: "172.16.1.9"
+  #    hbaseDistr2.vm.synced_folder "./",  "/tmp/sync"
+    hbaseDistr2.vm.box_url = "\n"
+    hbaseDistr2.vm.provider :virtualbox do |v|
+      v.customize ["modifyvm", :id, "--natdnshostresolver1", "on"]
+      v.customize ["modifyvm", :id, "--memory", 1024]
+      v.customize ["modifyvm", :id, "--name", "hbaseDistr2"]
+      v.customize ["modifyvm", :id, "--usb", "on"]
+      v.customize ["modifyvm", :id, "--usbehci", "off"]
+      v.customize ["modifyvm", :id, "--macaddress1", "auto"]
+    end
+
+    hbaseDistr2.vm.box_check_update = false
+
+    # add proxy configuration from host env - optional
+    if Vagrant.has_plugin?("vagrant-proxyconf")
+      puts "getting Proxy Configuration from Host..."
+      if ENV["http_proxy"]
+        puts "http_proxy: " + ENV["http_proxy"]
+        hbaseDistr2.proxy.http     = ENV["http_proxy"]
+      end
+      if ENV["https_proxy"]
+        puts "https_proxy: " + ENV["https_proxy"]
+        hbaseDistr2.proxy.https    = ENV["https_proxy"]
+      end
+      if ENV["no_proxy"]
+        hbaseDistr2.proxy.no_proxy = ENV["no_proxy"]
+      end
+    end
+
+    # VM hostname
+    hbaseDistr2.vm.hostname = "hbaseDistr2"
+
+    # Oracle port forwarding
+    # config.vm.network "forwarded_port", guest: 22, host: 2220
+
+    # Provision everything on the first run
+    #hbaseDistr2.vm.provision "file", source: "~/github/BigDataOracleSparkHBase/jre-8u181-linux-x64.rpm", destination: "/tmp"
+    #hbaseDistr2.vm.provision "file", source: "./scripts/zookeeper.service", destination: "/tmp"
+    #hbaseDistr2.vm.provision "shell", path: "scripts/java_1_8.sh"
+    #hbaseDistr2.vm.provision "shell", path: "scripts/instalHadoopStandalone.sh"
+    #hbaseDistr2.vm.provision "shell", path: "scripts/installHBSdistributed.sh"
+    #hbaseDistr2.vm.provision "shell", path: "scripts/zookeeperstandalone.sh"
+    #hbaseDistr2.vm.provision "shell", path: "scripts/geomesa.sh"
+    #hbaseDistr2.vm.provision "shell", inline: "echo 'INSTALLER hbaseDistr2: Installation complete, Oracle Linux 7 ready to use!'"
   end
 end

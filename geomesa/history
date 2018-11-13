@@ -1,0 +1,1001 @@
+vagrant@hbaseDistr conf]$ history
+  122  source ~/.bashrc
+  123  mvn clean install -pl geomesa-hbase-dist -am
+  124  cd ..
+  125  ls
+  126  mvn clean install -pl geomesa-hbase-dist -am
+  127  mvn clean install -pl geomesa-hbase/geomesa-hbase-dist -am
+  128  ls
+  129  mvn clean install -pl geomesa-hbase/geomesa-hbase-dist
+  130  ls
+  131  cd ..
+  132  rm -rf geomesa/
+  133  ls
+  134  git clone https://github.com/locationtech/geomesa.git
+  135  git checkout -b geomesa_2.11-2.0.2
+  136  cd geomesa/
+  137  git checkout -b geomesa_2.11-2.0.2
+  138  vim pom.xml
+  139  ls
+  140  cd geomesa-hbase/
+  141  ls
+  142  cd geomesa-hbase-tools/
+  143  ls
+  144  cd bin
+  145  ls
+  146  sh -c ./install-hadoop.sh
+  147  sudo sh -c ./install-hadoop.sh
+  148  ls -lF
+  149  chmod +x ./install-h*
+  150  ./install-hadoop.sh
+  151  cd /
+  152  ls
+  153  cd
+  154  cd geomesa/
+  155  ls
+  156  vim pom.xml
+  157  grep -r gmtools
+  158  vim pom.xml
+  159  ls
+  160  cd ..
+  161  rm -rf geomesa/
+  162  ls
+  163  git clone https://github.com/locationtech/geomesa.git
+  164  cd geomesa/
+  165  ls
+  166  vim pom.xml
+  167  ls
+  168  cd geomesa-hbase/
+  169  ls
+  170  mvn clean install -pl geomesa-hbase-dist -am
+  171  cd ..
+  172  ls
+  173  cp -r build/ geomesa-hbase/
+  174  cp -r docs/ geomesa-hbase/
+  175  cd geomesa-hbase/
+  176  mvn clean install -pl geomesa-hbase-dist -am
+  177  ls
+  178  cd geomesa-hbase-dist
+  179  ls
+  180  cd ..
+  181  find / -name '*.tar.gz' -print
+  182  find ./ -name '*.tar.gz' -print
+  183  cp ./geomesa-hbase-dist/target/geomesa-hbase_2.11-2.1.0-SNAPSHOT-bin.tar.gz /tmp/
+  184  cd /tmp/
+  185  ls
+  186  tar -zxvf geomesa-hbase_2.11-2.1.0-SNAPSHOT-bin.tar.gz
+  187  cp -r geomesa-hbase_2.11-2.1.0-SNAPSHOT /home/vagrant/
+  188  cd /home/vagrant/
+  189  ls
+  190  cd geomesa-hbase_2.11-2.1.0-SNAPSHOT/
+  191  ls
+  192  cd bin/
+  193  ls
+  194  ./geomesa-hbase
+  195  cd ..
+  196  ls
+  197  cd conf/
+  198  ls
+  199  vim geomesa-env.sh
+  200  ls
+  201  cd ..
+  202  rm geomesa
+  203  mv geomesa geomesa-git
+  204  ln -s geomesa-hbase_2.11-2.1.0-SNAPSHOT/ geomesa
+  205  cd geomesa
+  206  ls
+  207  cd bin/
+  208  ls
+  209  cd ..
+  210  vim .bashrc
+  211  source .bashrc
+  212  ls
+  213  cd geomesa
+  214  ls
+  215  cd bin
+  216  cd ..
+  217  pwd
+  218  vim .bashrc
+  219  source .bashrc
+  220  geomesa-hbase
+  221  vim .bashrc
+  222  source .bashrc
+  223  ls
+  224  cd geomesa/bin/install-jai.sh
+  225  geomesa/bin/install-jai.sh
+  226  geomesa/bin/install-jline.sh
+  227  geomesa/bin/install-hadoop.sh
+  228  ls
+  229  start-all.sh
+  230  jps
+  231  cd hadoop/logs/
+  232  tail -f hadoop-root-namenode-hbaseDistr.log
+  233  vim hadoop-root-namenode-hbaseDistr.log
+  234  shudown -r now
+  235  exit
+  236  su root
+  237  hdfs dfs -ls /
+  238  hdfs dfs -mkdir -p  /apps/hbase/lib
+  239  cd hbase/conf/hbase-site.xml
+  240  vim hbase/conf/hbase-site.xml
+  241  mkdir -p /usr/hdp/current/hbase-master/lib
+  242  sudo mkdir -p /usr/hdp/current/hbase-master/lib
+  243  cd hbase/lib/
+  244  ls
+  245  cd ..
+  246  vim hbase/conf/
+  247  cd hbase/conf/
+  248  ls
+  249  vim hbase-site.xml
+  250  hdfs dfs -mkdir -p  /hbase/lib
+  251  hdfs dfs -chown hbase:hdfs  /hbase/lib
+  252  hdfs dfs -,s /hbase/lib
+  253  hdfs dfs -ls /hbase/lib
+  254  hdfs dfs -ls /hbase
+  255  hdfs dfs -ls /
+  256  hdfs dfs -chown vagrant:supergroup  /hbase/lib
+  257  vim hbase-site.xml
+  258  hadoop classpath
+  259  hbase classpath
+  260  vim hbase-env.sh
+  261  ls
+  262  cd ..
+  263  ls
+  264  cd ..
+  265  ls
+  266  cd geomesa/
+  267  ls
+  268  cd geomesa-hbase/
+  269  ls
+  270  cd geomesa-hbase-dist
+  271  ls
+  272  cd src/
+  273  ls
+  274  cd ..
+  275  ls
+  276  cd geomesa/
+  277  ls
+  278  cd geomesa-hbase/
+  279  ls
+  280  cd ..
+  281  cd geomesa-tools/bin/
+  282  ls
+  283  cd ..
+  284  ls
+  285  cd geomesa-hbase/geomesa-hbase-tools/
+  286  ls
+  287  cd bin
+  288  ls
+  289  pwd
+  290  ls
+  291  cd geomesa-hbase
+  292  ls
+  293  cd ..
+  294  ls
+  295  cd ..
+  296  ls
+  297  cd geomesa-tools/
+  298  ls
+  299  cd bin/
+  300  ls
+  301  cp common-functions.sh ../../geomesa-hbase/geomesa-hbase-tools/bin/
+  302  sudo cp common-functions.sh ../../geomesa-hbase/geomesa-hbase-tools/bin/
+  303  cd
+  304  ls
+  305  wget https://apache.org/dist/zookeeper/zookeeper-3.4.10/zookeeper-3.4.10.tar.gz
+  306  ls
+  307  tar -zxvf zookeeper-3.4.10.tar.gz
+  308  rm zookeeper
+  309  ln -s zookeeper-3.4.10 zookeeper
+  310  cd zookeeper-3.4.12
+  311  ls
+  312  cd conf
+  313  ls
+  314  jps
+  315  start-all.sh
+  316  jps
+  317  stop-all.sh
+  318  jps
+  319  hadoop namenode -format
+  320  start-all.sh
+  321  jps
+  322  ls
+  323  ls -lF
+  324  cd hadoop
+  325  ls
+  326  ls -lF
+  327  cd etc/
+  328  ls -lF
+  329  cd hadoop/
+  330  ls -lF
+  331  vim hadoop-env.sh
+  332  ls
+  333  cd ..
+  334  ls
+  335  cd ..
+  336  ls
+  337  cd hadoop_store/
+  338  ls
+  339  ls -lF
+  340  cd hdfs/
+  341  ls
+  342  cd namenode/
+  343  ls
+  344  -ls
+  345  ls -lF
+  346  cd ...
+  347  cd ..
+  348  ls
+  349  cd ..
+  350  chown -R vagrant:vagrant *
+  351  sudo chown -R vagrant:vagrant *
+  352  ls
+  353  jps
+  354  cd
+  355  history | grep format
+  356  hadoop namenode -format
+  357  start-all.sh
+  358  jps
+  359  stop-all.sh
+  360  jps
+  361  start-all.sh
+  362  jps
+  363  ls
+  364  cd hadoop_store/
+  365  ls -lF
+  366  cd hdfs/
+  367  ls -lF
+  368  cd ..
+  369  ls -lF
+  370  cd datanode
+  371  cd datanos
+  372  ls
+  373  cd hdfs/
+  374  ls
+  375  ls -lF
+  376  chmod -R 775 datanode/
+  377  ls -lF
+  378  cd namenode/
+  379  ls -lF
+  380  cd ..
+  381  cd datanode/
+  382  ls -lF
+  383  cd .
+  384  cd ..
+  385  jps
+  386  stop-all.sh
+  387  jps
+  388  start-dfs.sh
+  389  jps
+  390  ls
+  391  vim .bashrc
+  392  cd hadoop/etc/hadoop/
+  393  vim hadoop-env.sh
+  394  vim core-site.xml
+  395  ls /app/hadoop/tmp/
+  396  ls -lF /app/hadoop/tmp/
+  397  vim core-site.xml
+  398  vim mapred-site.xml
+  399  vim hdfs-site.xml
+  400  jps
+  401  stop-dfs.sh
+  402  jps
+  403  hadoop namenode -format
+  404  start-dfs.sh
+  405  jps
+  406  cd ..
+  407  cd log
+  408  ls
+  409  cd logs
+  410  ls
+  411  tail -f hadoop-vagrant-datanode-hbaseDistr.log
+  412  tac -n 20 hadoop-vagrant-datanode-hbaseDistr.log
+  413  tail -n 20 hadoop-vagrant-datanode-hbaseDistr.log
+  414  stop-dfs.sh
+  415  jps
+  416  cd ..
+  417  ls
+  418  mkdir -p hadoop_store2/hdfs/namenode
+  419  mkdir -p hadoop_store2/hdfs/datanode
+  420  chown -R vagrant:vagrant hadoop_store2
+  421  cd hadoop/etc/hadoop/
+  422  vim hdfs-site.xml
+  423  hadoop version
+  424  hadoop namenode -format
+  425  start-dfs.sh
+  426  jps
+  427  cd logs
+  428  cd ..
+  429  cd logs
+  430  tail -n 20 hadoop-vagrant-secondarynamenode-hbaseDistr.log
+  431  mkdir -p /app/hadoop/tmp2
+  432  sudo mkdir -p /app/hadoop/tmp2
+  433  sudo chown vagrant:vagrant /app/hadoop/tmp2
+  434  cd ..
+  435  ls
+  436  cd etc/
+  437  ls
+  438  cd hadoop/
+  439  vim core-site.xml
+  440  jps
+  441  stop-dfs.sh
+  442  start-dfs.sh
+  443  ls
+  444  jps
+  445  start-yarn.sh
+  446  jps
+  447  hdfs dfs -ls /
+  448  jps
+  449  echo $JAVA_HOME
+  450  java
+  451  hadoop
+  452  hadoop fs -ls /
+  453  hadoop fs -mkdir /unai
+  454  hadoop fs -ls /
+  455  hadoop fs -mkdir -p /hbase/lib
+  456  hadoop fs -chown hbase:hbase /hbase/lib
+  457  hadoop fs -ls hdfs://localhost:54310/
+  458  hadoop fs -chown hbase:hbase /hbase
+  459  hadoop fs -ls hdfs://localhost:54310/
+  460  cd ..
+  461  ls
+  462  cd
+  463  ls
+  464  cd geomesa
+  465  ls
+  466  cd bin
+  467  ls
+  468  cd ..
+  469  cd dist
+  470  ls
+  471  cdcd ..
+  472  cd ..
+  473  ls
+  474  cd lib/
+  475  ls
+  476  cd ..
+  477  ls
+  478  cd dist/
+  479  ls
+  480  cd hbase/
+  481  ls
+  482  hadoop dfs -put geomesa-hbase-distributed-runtime_2.11-2.1.0-SNAPSHOT.jar /hbase/lib
+  483  hadoop fs -ls hdfs://localhost:54310/hbase/lib
+  484  ls
+  485  cd ..
+  486  ls
+  487  cd ..
+  488  ls
+  489  gerp -r HBase *
+  490  grep -r HBase *
+  491  cd
+  492  cat .bashrc
+  493  start-hbase.sh
+  494  jps
+  495  hbase shell
+  496  geomesa-hbase
+  497  geomesa-hbase ingest --help
+  498  geomesa-hbase ingest -z localhost
+  499  geomesa-hbase ingest -z localhost -c aqui
+  500  jps
+  501  hbase shell
+  502  geomesa-hbase ingest -z localhost:2181 -c aqui
+  503  geomesa-hbase ingest -z localhost:2181
+  504  cd geomesa
+  505  ls
+  506  grep -r hbase *
+  507  grep -r HBase *
+  508  geomesa-hbase
+  509  geomesa-hbase classpath
+  510  cd ..
+  511  ls
+  512  cd hbase
+  513  cd conf/
+  514  ls
+  515  vim hbase-site.xml
+  516  ls
+  517  cd ..
+  518  ls
+  519  cd bin/
+  520  ls
+  521  cd ..
+  522  cd lib/
+  523  ls
+  524  geomesa-hbase classpath | grep geomesa
+  525  geomesa-hbase configure
+  526  ls
+  527  cd ..
+  528  ls
+  529  cd ..
+  530  cd geomesa
+  531  ls
+  532  cd bin/
+  533  ls
+  534  cd ..
+  535  find / -name autocomplete.sh -print
+  536  cd geomesa
+  537  ls
+  538  cd conf/
+  539  ls
+  540  cd ..
+  541  ls
+  542  geomesa-hbase configure
+  543  jps
+  544  wget http://data.gdeltproject.org/gdeltv2/20181101081500.export.CSV.zip
+  545  unzip 20181101081500.export.CSV.zip
+  546  ls
+  547  rm 20181101081500.export.CSV.zip
+  548  ls
+  549  rm 20181101081500.export.CSV
+  550  wget http://data.gdeltproject.org/gdeltv2/20181101081500.export.CSV.zip
+  551  ls 20181101081500.export.CSV.zip | xargs -n 1 zcat | hadoop fs -put - /gdelt/uncompressed/20181101.tsv
+  552  ls 20181101081500.export.CSV.zip | xargs -n 1 zcat | hadoop fs -ls /
+  553  ls 20181101081500.export.CSV.zip | xargs -n 1 zcat | hadoop fs -ls /gdelt/uncompressed
+  554  geomesa-hbase ingest --catalog table --feature-name gdelt --converter gdelt2 --spec gdelt2 "hdfs://localhost:54310/gdelt/uncompressed/*"
+  555  geomesa-hbase ingest --catalog table --feature-name gdelt --converter gdelt2 --spec gdelt2 "hdfs://localhost:54310/gdelt/uncompressed/20181101.tsv"
+  556  jps
+  557  hbase shell
+  558  stop-hbase.sh
+  559  hdfs dfs -ls /
+  560  hdfs dfs -ls /gdelt/
+  561  hdfs dfs -ls /gdelt/uncompressed
+  562  start-hbase.sh
+  563  jps
+  564  hbase shell
+  565  ls
+  566  cd
+  567  cd hbase/conf/
+  568  ls
+  569  vim hbase-site.xml
+  570  stop-hbase.sh
+  571  jps
+  572  start-hbase.sh
+  573  jps
+  574  hbase shell
+  575  ls
+  576  vim hbase-site.xml
+  577  cp hbase-site.xml ~/
+  578  cat hbase-site.xml
+  579  ls ~/
+  580  ls
+  581  vim hbase-site.xml
+  582  stop-hbase.sh
+  583  jps
+  584  hdfs dfs -ls /
+  585  start-hbase.sh
+  586  jps
+  587  hbase shell
+  588  hdfs dfs -ls /
+  589  hdfs dfs -ls /gdelt/uncompressed/
+  590  geomesa-hbase ingest --catalog table --feature-name gdelt --converter gdelt2 --spec gdelt2 hdfs://localhost:54310/gdelt/uncompressed/20181101.tsv
+  591  pwd
+  592  vim hbase-site.xml
+  593  hbase shell
+  594  ls
+  595  vim hbase-site.xml
+  596  cat ~/.bashrc
+  597  stop-hbase.sh
+  598  start-hbase.sh
+  599  hbase shell
+  600  jps
+  601  vim hbase-site.xml
+  602  stop-hbase.sh
+  603  hdfs dfs -ls /
+  604  hbase-start
+  605  hbase-start.sh
+  606  start-hbase.sh
+  607  status
+  608  hbase shell
+  609  ls
+  610  history
+  611  geomesa-hbase ingest --catalog table --feature-name gdelt --converter gdelt2 --spec gdelt2 hdfs://localhost:54310/gdelt/uncompressed/20181101.tsv
+  612  vim hbase-site.xml
+  613  stop-hbase.sh
+  614  jps
+  615  start-hbase.sh
+  616  jps
+  617  geomesa-hbase ingest --catalog table --feature-name gdelt --converter gdelt2 --spec gdelt2 hdfs://localhost:54310/gdelt/uncompressed/20181101.tsv
+  618  vim hbase-site.xml
+  619  ls
+  620  vim hbase-env.sh
+  621  ls
+  622  vim hbase-site.xml
+  623  stop-hbase.sh
+  624  start-hbase.sh
+  625  jps
+  626  hbase status
+  627  hbase shell
+  628  ls
+  629  geomesa-hbase ingest --catalog table2 --feature-name gdelt --converter gdelt2 --spec gdelt2 hdfs://localhost:54310/gdelt/uncompressed/20181101.tsv
+  630  hbase shell
+  631  cd ..
+  632  ls
+  633  cd ..
+  634  cd geomesa
+  635  ls
+  636  cd conf/
+  637  ls
+  638  vim geomesa-env.sh
+  639  echo $GEOMESA_HADOOP_CLASSPATH
+  640  echo $GEOMESA_HBASE_CLASSPATH
+  641  printenv
+  642  hadoop
+  643  hbase
+  644  hdfs dfs -ls /hbase/lib
+  645  ls
+  646  pwd
+  647  cd ..
+  648  cd hbase/conf/
+  649  ls
+  650  grep -r CLASSPATH *
+  651  cd ..
+  652  ls
+  653  cd conf
+  654  ls
+  655  vim hbase-env.sh
+  656  ls
+  657  geomesa-hbase
+  658  geomesa-hbase classpath
+  659  ls
+  660  pwd
+  661  cd ..
+  662  cd geomesa
+  663  ls
+  664  cd conf/
+  665  ls
+  666  geomesa-hbase
+  667  geomesa-hbase env
+  668  geomesa-hbase version
+  669  geomesa-hbase version-remote
+  670  cd ..
+  671  cd hbase/conf/
+  672  ls
+  673  vim hbase-site.xml
+  674  cat ~/hbase-site.xml
+  675  pwd
+  676  vim hbase-site.xml
+  677  cd ..
+  678  ls
+  679  cd ..
+  680  cd geomesa
+  681  ls
+  682  cd dist/
+  683  ls
+  684  cd hbase/
+  685  ls
+  686  cp geomesa-hbase-distributed-runtime_2.11-2.1.0-SNAPSHOT.jar ~/hbase/lib/
+  687  cd conf
+  688  ls
+  689  cd ..
+  690  ls
+  691  cd hbase/conf/
+  692  ls
+  693  vim hbase-site.xml
+  694  geomesa-hbase
+  695  history
+  696  geomesa-hbase ingest --catalog table2 --feature-name gdelt --converter gdelt2 --spec gdelt2 hdfs://localhost:54310/gdelt/uncompressed/20181101.tsv
+  697  stop-hbase.sh
+  698  start-hbase.sh
+  699  hbase shell
+  700  hdfs dfs -ls /
+  701  geomesa-hbase ingest --catalog table3 --feature-name gdelt --converter gdelt2 --spec gdelt2 hdfs://localhost:54310/gdelt/uncompressed/20181101.tsv
+  702  hdfs dfs -ls /
+  703  ls
+  704  cat hbase-site.xml
+  705  ls
+  706  cd ..
+  707  ls
+  708  cd ..
+  709  ls
+  710  cd hbase
+  711  ls
+  712  cd conf/
+  713  ls
+  714  cd ..
+  715  cd geomesa
+  716  ls
+  717  cd conf
+  718  ls
+  719  cat geomesa-site.xml.template
+  720  geomesa-hbase configure
+  721  hbase classpath
+  722  geomesa-hbase ingest --catalog table2 --feature-name gdelt --converter gdelt2 --spec gdelt2 hdfs://localhost:54310/gdelt/uncompressed/20181101.tsv
+  723  vim ~/.bashrc
+  724  source ~/.bashrc
+  725  geomesa-hbase ingest --catalog table2 --feature-name gdelt --converter gdelt2 --spec gdelt2 hdfs://localhost:54310/gdelt/uncompressed/20181101.tsv
+  726  vim ~/.bashrc
+  727  source ~/.bashrc
+  728  jps
+  729  top
+  730  ps -axf| grep geomesa
+  731  top
+  732  ls
+  733  cd geomesa
+  734  ls
+  735  history
+  736  ls
+  737  cd logs
+  738  ls
+  739  tail -f geomesa.log
+  740  ls
+  741  cd ..
+  742  ls
+  743  cd ..
+  744  cd hbase
+  745  ls
+  746   cd conf
+  747  ls
+  748  exit
+  749  geomesa-hbase ingest --catalog table2 --feature-name gdelt --converter gdelt2 --spec gdelt2 hdfs://localhost:54310/gdelt/uncompressed/20181101.tsv
+  750  cd ..
+  751  ls
+  752  cd los
+  753  cdlogs
+  754  cd logs
+  755  tail -f  geomesa.log
+  756  geomesa-hbase ingest --catalog table2 --feature-name gdelt --converter gdelt2 --spec gdelt2 hdfs://localhost:54310/gdel
+  757  ls -lF --color
+  758  geomesa-hbase ingest --catalog table2 --feature-name gdelt --converter gdelt2 --spec gdelt2 hdfs://localhost:54310/gdelt/uncompressed/20181101.tsv
+  759  cd
+  760  geomesa-hbase ingest --catalog table2 --feature-name gdelt --converter gdelt2 --spec gdelt2 hdfs://localhost:54310/gdelt/uncompressed/20181101.tsv
+  761  ls
+  762  geomesa-hbase
+  763  geomesa-hbase help
+  764  geomesa-hbase help configure
+  765  geomesa-hbase env
+  766  geomesa-hbase
+  767  geomesa-hbase classpath
+  768  cd
+  769  ls
+  770  cd geomesa
+  771  ls
+  772  cd conf/
+  773  ls
+  774  vim geomesa-env.sh
+  775  cat /etc/environment
+  776  vim ~/.bashrc
+  777  hadoop
+  778  haddop credential
+  779  hadoop credential
+  780  hadoop classpath
+  781  hbase classpath
+  782  ls
+  783  cp geomesa-site.xml.template geomesa-site.xml
+  784  vim geomesa-site.xml
+  785  rm geomesa-site.xml
+  786  vim geomesa-site.xml
+  787  ln -s /home/vagrant/hbase/conf/hbase-site.xml hbase-site.xml
+  788  cd ..
+  789  ls
+  790  cd bin/
+  791  ls
+  792  ./install-hbase.sh
+  793  geomesa-hbase ingest --catalog table2 --feature-name gdelt --converter gdelt2 --spec gdelt2 hdfs://localhost:54310/gdelt/uncompressed/20181101.tsv
+  794  cd ..
+  795  ls
+  796  grep -r hdfs *
+  797  ls
+  798  cd bin/
+  799  ls
+  800  vim geomesa-hbase
+  801  cp geomesa-hbase geomesa-hbase-ols
+  802  vim geomesa-hbase
+  803  geomesa-hbase ingest --catalog table2 --feature-name gdelt --converter gdelt2 --spec gdelt2 hdfs://localhost:54310/gdelt/uncompressed/20181101.tsv
+  804  vim geomesa-hbase
+  805  geomesa-hbase ingest --catalog table2 --feature-name gdelt --converter gdelt2 --spec gdelt2 hdfs://localhost:54310/gdelt/uncompressed/20181101.tsv
+  806  vim geomesa-hbase
+  807  geomesa-hbase ingest --catalog table2 --feature-name gdelt --converter gdelt2 --spec gdelt2 hdfs://localhost:54310/gdelt/uncompressed/20181101.tsv
+  808  q!
+  809  pwd
+  810  cd ..
+  811  cd conf
+  812  ls
+  813  vim hbase-site.xml
+  814  stop-hbase.sh
+  815  start-hbase.sh
+  816  jps
+  817  hbase shell
+  818  geomesa-hbase ingest --catalog table2 --feature-name gdelt --converter gdelt2 --spec gdelt2 hdfs://localhost:54310/gdelt/uncompressed/20181101.tsv
+  819  cd ..
+  820  ls
+  821  cd bin
+  822  ls
+  823  vim geomesa-hbase.sh
+  824  ls
+  825  vim geomesa-hbase
+  826  ls
+  827  cd
+  828  cd hadoop
+  829  ls
+  830  cd etc/hadoop/
+  831  ls
+  832  vim core-site.xml
+  833  ls
+  834  cd
+  835  cd geomesa
+  836  cd conf/
+  837  ls
+  838  vim geomesa-env.sh
+  839  export GEOMESA_HADOOP_CLASSPATH=$(hadoop classpath)
+  840  export GEOMESA_HBASE_CLASSPATH=$(hbase classpath)
+  841  geomesa-hbase ingest --catalog table2 --feature-name gdelt --converter gdelt2 --spec gdelt2 hdfs://localhost:54310/gdelt/uncompressed/20181101.tsv
+  842  cd ..
+  843  ls
+  844  cd bin
+  845   bin/install-jai.sh
+  846  ./install-jai.sh
+  847  ./install-jline.sh
+  848  ls
+  849  cd ..
+  850  cd conf
+  851  ls
+  852  vim hbase-site.xml
+  853  stop-hbase.sh
+  854  start-hbase.sh
+  855  hbase shell
+  856  geomesa-hbase ingest --catalog table2 --feature-name gdelt --converter gdelt2 --spec gdelt2 hdfs://localhost:54310/gdelt/uncompressed/20181101.tsv
+  857  geomesa-hbase
+  858  geomesa-hbase ingest
+  859  geomesa-hbase ingest -z localhost
+  860  geomesa-hbase ingestls
+  861  geomesa-hbase ingest --catalog table2 --feature-name gdelt --converter gdelt2 --spec gdelt2 hdfs://localhost:54310/gdelt/uncompressed/20181101.tsv
+  862  hbase shell
+  863  jps
+  864  stop-hbase.sh
+  865  jps
+  866  exit
+  867  su root
+  868  ls
+  869  cd hadoop/etc/hadoop/
+  870  ls
+  871  vim core-site.xml
+  872  grep -r lib *
+  873  geomesa-hbase classpath
+  874  which geomesa-hbase
+  875  cd
+  876  cd geomesa/bin/
+  877  vim geomesa-hbase
+  878  printenv | grep geomesa
+  879  cd geomesa-hbase
+  880  cd ..
+  881  pwd
+  882  cd lib/
+  883  ls
+  884  hdfs dfs -mkdir -p hdfs://localhost:54310/home/vagrant/geomesa-hbase_2.11-2.1.0-SNAPSHOT/lib/
+  885  hdfs dfs -put * hdfs://localhost:54310/home/vagrant/geomesa-hbase_2.11-2.1.0-SNAPSHOT/lib/
+  886  hdfs dfs -ls hdfs://localhost:54310/home/vagrant/geomesa-hbase_2.11-2.1.0-SNAPSHOT/lib/
+  887  top
+  888  jps
+  889  hbase shell
+  890  stop-hbase.sh
+  891  start-hbase.sh
+  892  jps
+  893  hbase status
+  894  hbase shell
+  895  cd /home/vagrant/hbase-1.3.1/lib/
+  896  ls
+  897  hdfs dfs -mkdir -p hdfs://localhost:54310/home/vagrant//hbase-1.3.1/lib/
+  898  hdfs dfs -cp * hdfs://localhost:54310/home/vagrant//hbase-1.3.1/lib/
+  899  ls
+  900  hdfs dfs -cp * hdfs://localhost:54310/home/vagrant/hbase-1.3.1/lib/
+  901  sudo -u hbase hdfs dfs -cp * hdfs://localhost:54310/home/vagrant/hbase-1.3.1/lib/
+  902  hdfs dfs -mkdir -p hdfs://localhost:54310/home/vagrant/hbase-1.3.1/lib/
+  903  hdfs dfs -cp * hdfs://localhost:54310/home/vagrant/hbase-1.3.1/lib/
+  904  ls
+  905  hdfs dfs -ls hdfs://localhost:54310/home/vagrant/hbase-1.3.1/lib/
+  906  hdfs dfs -ls hdfs://localhost:54310/home/vagrant/hbase-1.3.1/
+  907  hdfs dfs -ls /home/vagrant/hbase-1.3.1/
+  908  hdfs dfs -cp * /home/vagrant/hbase-1.3.1/
+  909  ls -lF
+  910  hdfs dfs -cp zookeeper-3.4.6.jar /home/vagrant/hbase-1.3.1/
+  911  hdfs dfs -ls /home/
+  912  hdfs dfs -cp avro-1.7.4.jar /home/vagrant/hbase-1.3.1/
+  913  hdfs dfs -put * hdfs://localhost:54310/home/vagrant/hbase-1.3.1/lib/
+  914  ls
+  915  cd ..
+  916  ls
+  917  hdfs dfs hdfs://localhost:54310/home/vagrant/hadoop-2.6.4/share/hadoop/common/lib/
+  918  hdfs dfs -mkdir -p hdfs://localhost:54310/home/vagrant/hadoop-2.6.4/share/hadoop/common/lib/
+  919  cd /home/vagrant/hadoop-2.6.4/share/hadoop/common/lib/
+  920  ls
+  921  hdfs dfs -put * hdfs://localhost:54310/home/vagrant/hadoop-2.6.4/share/hadoop/common/lib/
+  922  cd ..
+  923  ls
+  924  cd ..
+  925  ls
+  926  cd mapreduce/
+  927  ls
+  928  cd lib
+  929  ls
+  930  hdfs dfs -mkdir -p hdfs://localhost:54310/home/vagrant/hadoop-2.6.4/share/hadoop/mapreduce/lib/
+  931  hdfs dfs -put * hdfs://localhost:54310/home/vagrant/hadoop-2.6.4/share/hadoop/mapreduce/lib/
+  932  hdfs dfs -mkdir -p hdfs://localhost:54310/home/vagrant/hadoop-2.6.4/hadoop/tools/lib/
+  933  cd ..
+  934  cd tools/lib/
+  935  ls
+  936  hdfs dfs -put * hdfs://localhost:54310/home/vagrant/hadoop-2.6.4/hadoop/tools/lib/
+  937  pwd
+  938  hdfs dfs -mkdir -p hdfs://localhost:54310/home/vagrant/hadoop-2.6.4/share/hadoop/tools/lib/
+  939  hdfs dfs -put * hdfs://localhost:54310/home/vagrant/hadoop-2.6.4/share/hadoop/tools/lib/
+  940  hdfs dfs -put * hdfs://localhost:54310/home/vagrant/hadoop-2.6.4/share/hadoop/hdfs/lib/
+  941  hdfs dfs -mkdir -p  hdfs://localhost:54310/home/vagrant/hadoop-2.6.4/share/hadoop/hdfs/lib/
+  942  cd /home/vagrant/hadoop-2.6.4/share/hadoop/hdfs/lib/htrace-core-3.0.4.jar
+  943  cd /home/vagrant/hadoop-2.6.4/share/hadoop/hdfs/lib/
+  944  hdfs dfs -put *  hdfs://localhost:54310/home/vagrant/hadoop-2.6.4/share/hadoop/hdfs/lib/
+  945  hdfs dfs -mkdir -p  hdfs://localhost:54310/home/vagrant/hadoop-2.6.4/share/hadoop/yarn/lib/
+  946  cd
+  947  cd /home/vagrant/hadoop-2.6.4/share/hadoop/yarn/lib/
+  948  hdfs dfs -put *  hdfs://localhost:54310/home/vagrant/hadoop-2.6.4/share/hadoop/yarn/lib/
+  949  pwd
+  950  ls
+  951  cd ..
+  952  ls
+  953  cd ..
+  954  ls
+  955  cd geomesa
+  956  ls
+  957  cd logs
+  958  ls
+  959  tail -f geomesa.log
+  960  df -h
+  961  ls
+  962  cd
+  963  ls
+  964  cd /tmp/
+  965  ls
+  966  cp -r geomesa-hbase_2.11-2.1.0-SNAPSHOT /home/vagrant/
+  967  cd /home/vagrant/
+  968  ls
+  969  cd geomesa
+  970  ls
+  971  cd ..
+  972  ls
+  973  cp -rf geomesa-hbase_2.11-2.1.0-SNAPSHOT/ geomesa-hbase_2.11-2.1.0-SNAPSHOT(1)
+  974  cp -rf geomesa-hbase_2.11-2.1.0-SNAPSHOT/ geomesa-hbase_2.11-2.1.0-SNAPSHOT_1
+  975  ls
+  976  rm geomesa-hbase_2.11-2.1.0-SNAPSHOT
+  977  rm -rf geomesa-hbase_2.11-2.1.0-SNAPSHOT
+  978  cd /tmp/
+  979  cp -r geomesa-hbase_2.11-2.1.0-SNAPSHOT /home/vagrant/
+  980  cd /home/vagrant/
+  981  cd geomesa
+  982  ls
+  983  cd conf/
+  984  ls
+  985  cd ..
+  986  cd bin
+  987  ls
+  988  geomesa-hbase
+  989  ls -lF
+  990  cd ..
+  991  ls -lF
+  992  cd ..
+  993  ls
+  994  cd geomesa-git/
+  995  ls
+  996  cd geomesa-hbase/
+  997  ls
+  998  mvn scala:console -pl geomesa-hbase-datastore
+  999  ls
+ 1000  java
+ 1001  ls
+ 1002  cd geomesa-git/
+ 1003  ls
+ 1004  cd geomesa-hbase/
+ 1005  ls
+ 1006   mvn clean install -DskipTests
+ 1007  ls -lF --color
+ 1008  ls
+ 1009  cd geomesa-hbase-dist
+ 1010  ls
+ 1011  cd ..
+ 1012  cd geomesa-hbase-datastore/
+ 1013  ls
+ 1014  cd ..
+ 1015  find / -name *.gz -print
+ 1016  pwd
+ 1017  cd dist/
+ 1018  ls
+ 1019  cd geomesa-hbase-gs-plugin/
+ 1020  ls
+ 1021  cd ..
+ 1022  ls
+ 1023  sudo find / -name *.gz -print
+ 1024  ls
+ 1025  cd geomesa-hbase-dist
+ 1026  ls
+ 1027  cd target/
+ 1028  ls
+ 1029  ls -lF
+ 1030  date
+ 1031  cp geomesa-hbase_2.11-2.1.0-SNAPSHOT-bin.tar.gz ~/
+ 1032  cd
+ 1033  ls
+ 1034  cp -r geomesa-hbase_2.11-2.1.0-SNAPSHOT geomesa-hbase_2.11-2.1.0-SNAPSHOT_2
+ 1035  rm -rf geomesa-hbase_2.11-2.1.0-SNAPSHOT
+ 1036  tar -zxvf geomesa-hbase_2.11-2.1.0-SNAPSHOT-bin.tar.gz
+ 1037  jps
+ 1038  hbase shell
+ 1039  export HBASE_MANAGES_ZK=false
+ 1040  hbase shell
+ 1041  export HBASE_DISABLE_HADOOP_CLASSPATH_LOOKUP=true
+ 1042  hbase shell
+ 1043  vim .bashrc
+ 1044  history |grep geomesa-hbase
+ 1045  geomesa-hbase ingest --catalog table2 --feature-name gdelt --converter gdelt2 --spec gdelt2 hdfs://localhost:54310/gdelt/uncompressed/20181101.tsv
+ 1046  geomesa-hbase ingest --catalog t4ble2 --feature-name gdelt --converter gdelt2 --spec gdelt2 hdfs://localhost:54310/gdelt/uncompressed/20181101.tsv
+ 1047  hbase shell
+ 1048  cd
+ 1049  ls
+ 1050  cd geomesa
+ 1051  ls
+ 1052  cd dist/
+ 1053  ls
+ 1054  cd hbase/
+ 1055  ls
+ 1056  hdfs dfs -rm /hbase/lib/geo*
+ 1057  hdfs dfs -put geomesa-hbase-distributed-runtime_2.11-2.1.0-SNAPSHOT.jar /hbase/lib
+ 1058  find / -name geomesa-hbase-distributed-runtime_2.11-2.1.0-SNAPSHOT.jar -print
+ 1059  cp geomesa-hbase-distributed-runtime_2.11-2.1.0-SNAPSHOT.jar /home/vagrant/hbase-1.3.1/lib/geomesa-hbase-distributed-runtime_2.11-2.1.0-SNAPSHOT.jar
+ 1060  geomesa-hbase ingest --catalog t4ble2 --feature-name gdelt --converter gdelt2 --spec gdelt2 hdfs://localhost:54310/gdelt/uncompressed/20181101.tsv
+ 1061  stop-hbase.sh
+ 1062  start-hbase.sh
+ 1063  jps
+ 1064  hbase shell
+ 1065  ls
+ 1066  pwd
+ 1067  ls -lF /home/vagrant/
+ 1068  ls
+ 1069  geomesa-hbase ingest --catalog t4ble2 --feature-name gdelt --converter gdelt2 --spec gdelt2 hdfs://localhost:54310/gdelt/uncompressed/20181101.tsv
+ 1070  hdfs dfs -chown -R hbase:hbase /hbase
+ 1071  geomesa-hbase ingest --catalog t4ble2 --feature-name gdelt --converter gdelt2 --spec gdelt2 hdfs://localhost:54310/gdelt/uncompressed/20181101.tsv
+ 1072  geomesa-hbase classpath | grep proto
+ 1073  cd /home/vagrant/
+ 1074  ls
+ 1075  ls -lF hadoop
+ 1076  cd geomesa/lib/
+ 1077  ls
+ 1078  cd ..
+ 1079  ls
+ 1080  geomesa-hbase classpath | grep proto
+ 1081  cp /home/vagrant/hadoop/share/hadoop/yarn/lib/protobuf-java-2.5.0.jar /home/vagrant/geomesa/lib/
+ 1082  cp /home/vagrant/geomesa/lib/protobuf-java-2.6.1.jar ~/
+ 1083  rm /home/vagrant/geomesa/lib/protobuf-java-2.6.1.jar
+ 1084  geomesa-hbase ingest --catalog t4ble2 --feature-name gdelt --converter gdelt2 --spec gdelt2 hdfs://localhost:54310/gdelt/uncompressed/20181101.tsv
+ 1085  hadoop version
+ 1086  hbase version
+ 1087  history | grep git
+ 1088  history | more
+ 1089  printenv
+ 1090  vim ~/.bashrc
+ 1091  cd ..
+ 1092  ls
+ 1093  cd geomesa
+ 1094  git tag
+ 1095  git
+ 1096  git branch
+ 1097  ls
+ 1098  cd ..
+ 1099  cd geomesa-git/
+ 1100  git branch
+ 1101  git tag
+ 1102  git branch
+ 1103  ls
+ 1104  cd ..
+ 1105  cd hadoop
+ 1106  ls
+ 1107  cd etc/
+ 1108  ls
+ 1109  cd hadoop/
+ 1110  ls
+ 1111  vim core-site.xml
+ 1112  cat core-site.xml
+ 1113  cat mapred-site.xml
+ 1114  cd ..
+ 1115  cd
+ 1116  cd hbase/conf/
+ 1117  ls
+ 1118  cat hbase-site.xml
+ 1119  ls
+ 1120  cat hbase-env.sh
+ 1121  history
